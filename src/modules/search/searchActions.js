@@ -1,4 +1,4 @@
-import * as actionTypes from "./actionTypes";
+import * as actionTypes from "./searchActionTypes";
 import * as api from "api";
 
 export const SET_QUERY = (query) => ({
@@ -7,11 +7,11 @@ export const SET_QUERY = (query) => ({
 });
 
 export const startFetchingMovies = () => ({
-  type: actionTypes.startFetchingMovies,
+  type: actionTypes.START_FETCHING_MOVIES,
 });
 
-export const succesFetchingMovies = (movies) => ({
-  type: actionTypes.successFetchingMovies,
+export const successFetchingMovies = (movies) => ({
+  type: actionTypes.SUCCESS_FETCHING_MOVIES,
   payload: { movies },
 });
 
@@ -25,7 +25,8 @@ export function fetchMovies(query, page = 1) {
     try {
       dispatch(startFetchingMovies());
       const { data } = await api.Movies.search(query, page);
-    } catch (e) {
+      dispatch(successFetchingMovies(data.results));
+    } catch (error) {
       dispatch(failFetchingMovies(error));
     }
   };

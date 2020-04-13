@@ -1,17 +1,20 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import Search from "./searchComponent";
 import Results from "./results";
 import { Container } from "semantic-ui-react";
 
-function SearchPage() {
-  const [results, setResults] = useState([]);
+function SearchPage({ results }) {
   const [page, setPage] = useState(1);
+
   return (
     <Container>
-      <Search page={page} />
+      <Search />
       <Results results={results} />
     </Container>
   );
 }
 
-export default SearchPage;
+const mapStateToProps = ({ search }) => ({ results: search.results });
+
+export default connect(mapStateToProps)(SearchPage);
