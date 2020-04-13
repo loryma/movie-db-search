@@ -1,10 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "store";
 import routes from "./routes";
 import "./App.css";
 
 function App() {
-  return <Router>{routes}</Router>;
+  return <Provider store={store}>{routes}</Provider>;
 }
 
 export default App;
