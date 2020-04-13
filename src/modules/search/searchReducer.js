@@ -1,6 +1,6 @@
 import * as actionTypes from "./searchActionTypes";
 
-const initial = { loading: false, error: null, results: null, query: "" };
+const initial = { loading: false, error: null, results: [], query: "" };
 
 function searchReducer(state = initial, action) {
   switch (action.type) {
@@ -9,12 +9,12 @@ function searchReducer(state = initial, action) {
     case actionTypes.SUCCESS_FETCHING_MOVIES:
       return {
         ...state,
-        movies: [...payload.movies],
+        results: [...action.payload.movies],
         loading: false,
         error: null,
       };
-    case actionTypes.FAILT_FETCHING_MOVIES:
-      return { ...state, loading: false, error: payload.error };
+    case actionTypes.FAIL_FETCHING_MOVIES:
+      return { ...state, loading: false, error: action.payload.error };
     default:
       return state;
   }
