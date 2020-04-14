@@ -1,7 +1,7 @@
 import * as actionTypes from "./searchActionTypes";
 import * as api from "api";
 
-export const SET_QUERY = (query) => ({
+export const setQuery = (query) => ({
   type: actionTypes.SET_QUERY,
   payload: { query },
 });
