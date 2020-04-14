@@ -3,15 +3,19 @@ import { connect } from "react-redux";
 import Search from "./searchComponent";
 import Results from "./results";
 import { Container } from "semantic-ui-react";
+import Menu from "shared/menu";
 
 function SearchPage({ results }) {
   const [page, setPage] = useState(1);
 
   return (
-    <Container>
-      <Search />
-      <Results results={results} />
-    </Container>
+    <>
+      <Menu />
+      <Container>
+        <Search />
+        <Results results={results} />
+      </Container>
+    </>
   );
 }
 
