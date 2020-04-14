@@ -1,0 +1,15 @@
+.results {
+  margin-top: 0.5rem !important;
+}
+
+.results__card {
+  height: 100%;
+}
+
+.results__description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  max-height: 60px;
+  overflow: hidden;
+}

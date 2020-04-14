@@ -1,0 +1,11 @@
+.menu {
+  border-radius: 0 !important;
+  margin-bottom: 1.5rem !important;
+  &__item {
+    border-radius: 0 !important;
+  }
+  &__logo {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2em;
+  }
+}
