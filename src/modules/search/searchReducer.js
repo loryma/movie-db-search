@@ -15,6 +15,9 @@ function searchReducer(state = initial, action) {
       };
     case actionTypes.FAIL_FETCHING_MOVIES:
       return { ...state, loading: false, error: action.payload.error };
+
+    case actionTypes.SET_QUERY:
+      return { ...state, query: action.payload.query };
     default:
       return state;
   }
