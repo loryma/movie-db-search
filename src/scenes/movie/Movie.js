@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Divider, Image, Header, Grid } from "semantic-ui-react";
+import Menu from "shared/menu";
 import * as Api from "api";
 import { formatRuntime } from "utils";
 import defaultImage from "./not-found.png";
@@ -46,28 +47,31 @@ function Movie() {
   }
 
   return (
-    <Container>
-      <Grid columns={2} stackable>
-        <Grid.Column>
-          <Image size="large" src={src} />
-        </Grid.Column>
+    <>
+      <Menu />
+      <Container>
+        <Grid columns={2} stackable>
+          <Grid.Column>
+            <Image size="large" src={src} />
+          </Grid.Column>
 
-        <Grid.Column>
-          <Header>
-            {data.title} {date}
-          </Header>
-          <div className="movie__info info">
-            <div className="movie__duration info__item">{duration}</div>
-            {data.genres.map((genre) => (
-              <div className="movie__genre info__item" key={genre.name}>
-                {genre.name}
-              </div>
-            ))}
-          </div>
-          <p>{data.overview}</p>
-        </Grid.Column>
-      </Grid>
-    </Container>
+          <Grid.Column>
+            <Header>
+              {data.title} {date}
+            </Header>
+            <div className="movie__info info">
+              <div className="movie__duration info__item">{duration}</div>
+              {data.genres.map((genre) => (
+                <div className="movie__genre info__item" key={genre.name}>
+                  {genre.name}
+                </div>
+              ))}
+            </div>
+            <p>{data.overview}</p>
+          </Grid.Column>
+        </Grid>
+      </Container>
+    </>
   );
 }
 
