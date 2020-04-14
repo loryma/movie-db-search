@@ -2,7 +2,7 @@ import React from "react";
 import { Grid } from "semantic-ui-react";
 import defaultImage from "./not-found.png";
 import ResultItem from "../resultItem";
-import "./Results.css";
+import "./Results.scss";
 
 const base_url = "http://image.tmdb.org/t/p/";
 const backdrop_sizes = ["w300", "w780", "w1280", "original"];

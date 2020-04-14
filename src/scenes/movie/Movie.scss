@@ -1,0 +1,22 @@
+.movie {
+  &__duration {
+    white-space: nowrap;
+  }
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 1em;
+  &__item {
+    padding: 0 1em;
+  }
+
+  &__item:first-child {
+    padding-left: 0;
+  }
+
+  &__item + &__item {
+    border-left: 1px solid rgba(34, 36, 38, 0.15);
+  }
+}
